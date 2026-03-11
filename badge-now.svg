@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="62" viewBox="0 0 176 62">
+  <!-- Background -->
+  <rect width="176" height="62" rx="3" fill="#f0eff5"/>
+  <rect x="1" y="1" width="174" height="60" rx="2" fill="#faf9fd"/>
+  <!-- Accent stripe -->
+  <rect x="1" y="1" width="174" height="3" rx="2" fill="#646cff"/>
+
+  <!-- "BUILT WITH" top -->
+  <text x="88" y="19" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#888" letter-spacing="2">BUILT WITH</text>
+
+  <!-- {EH} enginehaus center -->
+  <text x="32" y="39" text-anchor="middle" font-family="monospace" font-size="18" font-weight="300" fill="#646cff" opacity="0.7">{</text>
+  <text x="52" y="39" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#646cff">EH</text>
+  <text x="70" y="39" text-anchor="middle" font-family="monospace" font-size="18" font-weight="300" fill="#646cff" opacity="0.7">}</text>
+  <text x="126" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#1a1a2e">enginehaus</text>
+
+  <!-- Tagline -->
+  <text x="88" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#737373" letter-spacing="0.5">context that compounds</text>
+</svg>

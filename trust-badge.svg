@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Outer seal ring -->
+  <circle cx="90" cy="90" r="85" fill="none" stroke="#646cff" stroke-width="3"/>
+  <circle cx="90" cy="90" r="78" fill="none" stroke="#646cff" stroke-width="1" opacity="0.4"/>
+
+  <!-- Decorative dots around the ring -->
+  <g fill="#646cff" opacity="0.5">
+    <circle cx="90" cy="8" r="2.5"/>
+    <circle cx="90" cy="172" r="2.5"/>
+    <circle cx="8" cy="90" r="2.5"/>
+    <circle cx="172" cy="90" r="2.5"/>
+    <circle cx="32" cy="32" r="2"/>
+    <circle cx="148" cy="32" r="2"/>
+    <circle cx="32" cy="148" r="2"/>
+    <circle cx="148" cy="148" r="2"/>
+  </g>
+
+  <!-- Top arc text: BUILT WITH -->
+  <defs>
+    <path id="topArc" d="M 30,90 A 60,60 0 0,1 150,90"/>
+    <path id="bottomArc" d="M 148,100 A 58,58 0 0,1 32,100"/>
+  </defs>
+  <text font-family="Inter, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#646cff" letter-spacing="3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">BUILT WITH</textPath>
+  </text>
+
+  <!-- Center mark -->
+  <text x="90" y="82" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" font-weight="300" fill="#646cff" opacity="0.6">{</text>
+  <text x="90" y="100" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#646cff">EH</text>
+  <text x="90" y="82" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" font-weight="300" fill="#646cff" opacity="0.6" dx="20">}</text>
+
+  <!-- Bottom arc text -->
+  <text font-family="Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#646cff" letter-spacing="2">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">ENGINEHAUS</textPath>
+  </text>
+
+  <!-- Tagline -->
+  <text x="90" y="120" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="8" fill="#646cff" opacity="0.7" letter-spacing="0.5">ZERO DECISIONS LOST</text>
+
+  <!-- Small star decorations -->
+  <text x="48" y="93" text-anchor="middle" font-size="8" fill="#646cff" opacity="0.5">★</text>
+  <text x="132" y="93" text-anchor="middle" font-size="8" fill="#646cff" opacity="0.5">★</text>
+</svg>

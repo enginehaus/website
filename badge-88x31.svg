@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="62" viewBox="0 0 176 62">
+  <!-- Double border like classic 88x31 buttons (scaled 2x for retina) -->
+  <rect width="176" height="62" rx="2" fill="#1a1a2e"/>
+  <rect x="2" y="2" width="172" height="58" rx="1" fill="none" stroke="#646cff" stroke-width="2"/>
+  <rect x="5" y="5" width="166" height="52" rx="0" fill="none" stroke="#646cff" stroke-width="1" opacity="0.3"/>
+
+  <!-- {EH} mark -->
+  <text x="28" y="30" text-anchor="middle" font-family="monospace" font-size="14" font-weight="300" fill="#646cff" opacity="0.7">{</text>
+  <text x="44" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#fff">EH</text>
+  <text x="60" y="30" text-anchor="middle" font-family="monospace" font-size="14" font-weight="300" fill="#646cff" opacity="0.7">}</text>
+
+  <!-- "enginehaus" text -->
+  <text x="120" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#fff" letter-spacing="0.5">enginehaus</text>
+
+  <!-- Bottom tagline -->
+  <text x="88" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#646cff" letter-spacing="1.5">BUILT WITH</text>
+</svg>

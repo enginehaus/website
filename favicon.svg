@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#646cff"/>
-  <text x="32" y="47" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="44" font-weight="700" fill="#fff">E</text>
+  <text x="10" y="47" font-family="JetBrains Mono, monospace" font-size="32" font-weight="300" fill="#fff" opacity="0.5">{</text>
+  <text x="32" y="47" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="36" font-weight="700" fill="#fff">E</text>
+  <text x="44" y="47" font-family="JetBrains Mono, monospace" font-size="32" font-weight="300" fill="#fff" opacity="0.5">}</text>
 </svg>
