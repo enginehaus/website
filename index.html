@@ -668,6 +668,104 @@
     .footer-dogfood { font-size: 12px; color: var(--accent); font-style: italic; opacity: 0.8; }
     .footer-copyright { font-size: 12px; color: var(--text-muted); }
 
+    /* --- CLAUDE CODE CALLOUT --- */
+    .cc-callout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 80px 80px;
+      max-width: 1440px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+    .cc-callout-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+    }
+    .cc-callout-heading {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      text-align: center;
+    }
+    .cc-callout-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+    }
+    .cc-callout-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+    .cc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cc-card-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .cc-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .cc-card p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    /* --- LOCAL-FIRST TRUST --- */
+    .trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 48px 80px;
+      max-width: 1440px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+    .trust-mark {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    .trust-mark .bracket {
+      font-weight: 300;
+      opacity: 0.6;
+    }
+    .trust-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .trust-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
     /* --- SUMMARY --- */
     .acts-summary {
       font-size: 16px;
@@ -689,6 +787,9 @@
       .features-grid-row2 { grid-template-columns: 1fr; max-width: 100%; }
       .act1-panels { flex-direction: column; }
       .context-panel { border-left: none; border-top: 1px solid var(--border); }
+      .cc-callout { padding: 60px 40px; }
+      .cc-callout-cards { grid-template-columns: 1fr; }
+      .trust-strip { padding: 40px; }
       .cta { padding: 80px 40px; }
       .footer { padding: 48px 40px; }
     }
@@ -701,6 +802,9 @@
       .section { padding: 48px 20px; }
       .problem-solution { padding: 32px 20px; }
       .acts-intro { font-size: 20px; }
+      .cc-callout { padding: 48px 20px; }
+      .cc-callout-heading { font-size: 24px; }
+      .trust-strip { padding: 32px 20px; flex-direction: column; text-align: center; }
       .cta { padding: 60px 20px; }
       .cta h2 { font-size: 28px; }
       .footer { padding: 32px 20px; }
@@ -982,6 +1086,34 @@
     </div>
   </section>
 
+  <!-- CLAUDE CODE CALLOUT -->
+  <section class="cc-callout">
+    <span class="cc-callout-label">WHY CLAUDE CODE USERS LOVE THIS</span>
+    <h2 class="cc-callout-heading">Claude Code is the engine.<br>Enginehaus is the long-term memory.</h2>
+    <p class="cc-callout-text">
+      Claude Code is incredibly powerful at execution — but its memory is session-bound.
+      Exit and restart, and it relies on you to feed it the right context or re-scan the codebase.
+      Enginehaus gives every session a stable, versioned briefing via MCP — automatically.
+    </p>
+    <div class="cc-callout-cards">
+      <div class="cc-card">
+        <span class="cc-card-label">THE PROBLEM</span>
+        <h4>Context drift</h4>
+        <p>Long refactors span multiple sessions. Without persistent memory, each session re-discovers decisions the last one already made.</p>
+      </div>
+      <div class="cc-card">
+        <span class="cc-card-label">THE MECHANISM</span>
+        <h4>Versioned briefing</h4>
+        <p>Every session starts with a structured briefing — decisions, tasks, project state — loaded via MCP before the first prompt.</p>
+      </div>
+      <div class="cc-card">
+        <span class="cc-card-label">THE RESULT</span>
+        <h4>Compound context</h4>
+        <p>Session 12 knows what session 1 decided. No re-explaining, no drift. Context accumulates instead of evaporating.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WHO THIS IS FOR -->
   <section class="section">
     <div class="section-label">WHO THIS IS FOR</div>
@@ -1016,6 +1148,12 @@
       </div>
     </div>
   </section>
+
+  <!-- LOCAL-FIRST TRUST -->
+  <div class="trust-strip">
+    <span class="trust-mark"><span class="bracket">{</span>EH<span class="bracket">}</span></span>
+    <span class="trust-text"><strong>Local-first. Zero-cloud. Open source.</strong> Your project's intelligence belongs to you. Everything runs on your machine — no accounts, no telemetry, no data leaving your disk.</span>
+  </div>
 
   <!-- CTA -->
   <section class="cta">
