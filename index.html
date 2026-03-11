@@ -756,15 +756,6 @@
       letter-spacing: -0.6px;
       text-align: center;
     }
-    .wheelhaus-heading .wh-mark {
-      font-family: var(--mono);
-      color: var(--accent);
-      letter-spacing: -1px;
-    }
-    .wheelhaus-heading .wh-mark .bracket {
-      font-weight: 300;
-      opacity: 0.6;
-    }
     .wheelhaus-sub {
       font-size: 15px;
       line-height: 1.7;
@@ -807,39 +798,53 @@
       color: var(--text-muted);
       margin-left: auto;
     }
-    .wh-dash-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
+    .wh-stream {
+      padding: 8px 0;
     }
-    .wh-dash-cell {
-      background: var(--surface);
-      padding: 20px;
+    .wh-stream-entry {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
     }
-    .wh-dash-cell-label {
+    .wh-stream-entry:last-child {
+      border-bottom: none;
+    }
+    .wh-stream-badge {
       font-family: var(--mono);
       font-size: 10px;
       font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      width: fit-content;
     }
-    .wh-dash-cell-value {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -1px;
+    .wh-stream-badge.badge-waiting {
+      background: #C45C2618;
+      color: var(--orange);
     }
-    .wh-dash-cell-value.green { color: var(--green); }
-    .wh-dash-cell-value.accent { color: var(--accent); }
-    .wh-dash-cell-value.orange { color: var(--orange); }
-    .wh-dash-cell-sub {
+    .wh-stream-badge.badge-bottleneck {
+      background: #D93C1518;
+      color: var(--red);
+    }
+    .wh-stream-badge.badge-decision {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .wh-stream-badge.badge-progress {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+    .wh-stream-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .wh-stream-meta {
       font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.4;
     }
     .wh-dash-bottom {
       padding: 16px 20px;
@@ -863,6 +868,7 @@
     }
     .wh-dash-item .dot.green { background: var(--green); }
     .wh-dash-item .dot.orange { background: var(--orange); }
+    .wh-dash-item .dot.red { background: var(--red); }
     .wh-dash-item .dot.accent { background: var(--accent); }
 
     /* --- LOCAL-FIRST TRUST --- */
@@ -923,7 +929,6 @@
       .cc-callout { padding: 60px 40px; }
       .cc-callout-cards { grid-template-columns: 1fr; }
       .wheelhaus-section { padding: 60px 40px; }
-      .wh-dash-grid { grid-template-columns: 1fr; }
       .trust-strip { padding: 40px; }
       .cta { padding: 80px 40px; }
       .footer { padding: 48px 40px; }
@@ -1253,39 +1258,49 @@
 
   <!-- WHEELHAUS -->
   <section class="wheelhaus-section">
-    <span class="wheelhaus-label">OBSERVABILITY</span>
-    <h2 class="wheelhaus-heading">See what your agents are doing.<br><span class="wh-mark"><span class="bracket">&lt;</span>WH<span class="bracket">&gt;</span></span> Wheelhaus.</h2>
+    <span class="wheelhaus-label">WHEELHAUS</span>
+    <h2 class="wheelhaus-heading">Never wonder what's blocking your agents.</h2>
     <p class="wheelhaus-sub">
-      Tasks, decisions, bottlenecks, and what's waiting on you — in one view.
-      Wheelhaus is the control room that lets you trust what's happening without watching every step.
+      Wheelhaus surfaces the decisions that need a human eye and the bottlenecks that stall your sessions. Your context isn't a hidden database — it's a live stream you can audit and act on.
     </p>
     <div class="wh-dashboard">
       <div class="wh-dash-header">
         <div class="wh-dash-dot"></div>
-        <span class="wh-dash-title">Wheelhaus</span>
+        <span class="wh-dash-title">{EH} Wheelhaus</span>
         <span class="wh-dash-status">live · 3s ago</span>
       </div>
-      <div class="wh-dash-grid">
-        <div class="wh-dash-cell">
-          <span class="wh-dash-cell-label">Health</span>
-          <span class="wh-dash-cell-value green">Healthy</span>
-          <span class="wh-dash-cell-sub">87% completion rate · 4% blocked</span>
+      <div class="wh-stream">
+        <div class="wh-stream-entry">
+          <span class="wh-stream-badge badge-waiting">waiting on you</span>
+          <span class="wh-stream-text">Confirm rate limit strategy — edge or app layer?</span>
+          <span class="wh-stream-meta">from Claude Code · auth task · 12 min ago</span>
         </div>
-        <div class="wh-dash-cell">
-          <span class="wh-dash-cell-label">Ready Work</span>
-          <span class="wh-dash-cell-value accent">12</span>
-          <span class="wh-dash-cell-sub">tasks ready · 3 critical</span>
+        <div class="wh-stream-entry">
+          <span class="wh-stream-badge badge-bottleneck">bottleneck</span>
+          <span class="wh-stream-text">API spec blocks 3 downstream tasks</span>
+          <span class="wh-stream-meta">Define API Specification (OpenAPI) · critical priority</span>
         </div>
-        <div class="wh-dash-cell">
-          <span class="wh-dash-cell-label">Waiting on You</span>
-          <span class="wh-dash-cell-value orange">2</span>
-          <span class="wh-dash-cell-sub">decisions need human input</span>
+        <div class="wh-stream-entry">
+          <span class="wh-stream-badge badge-decision">decision</span>
+          <span class="wh-stream-text">JWT auth, stateless — edge deployment target</span>
+          <span class="wh-stream-meta">logged by Claude Code · architecture · 2h ago</span>
+        </div>
+        <div class="wh-stream-entry">
+          <span class="wh-stream-badge badge-progress">in progress</span>
+          <span class="wh-stream-text">Implement auth layer — Phase 3: Core Implementation</span>
+          <span class="wh-stream-meta">Claude Code · 4 files changed · 47 min active</span>
+        </div>
+        <div class="wh-stream-entry">
+          <span class="wh-stream-badge badge-decision">decision</span>
+          <span class="wh-stream-text">Rate limiting at edge layer, not the app</span>
+          <span class="wh-stream-meta">logged by Claude Code · tradeoff · 2h ago</span>
         </div>
       </div>
       <div class="wh-dash-bottom">
+        <span class="wh-dash-item"><span class="dot orange"></span> 1 waiting on you</span>
+        <span class="wh-dash-item"><span class="dot red"></span> 1 bottleneck</span>
         <span class="wh-dash-item"><span class="dot green"></span> 2 active sessions</span>
-        <span class="wh-dash-item"><span class="dot accent"></span> 8 decisions this week</span>
-        <span class="wh-dash-item"><span class="dot orange"></span> 1 bottleneck: API spec blocks 3 tasks</span>
+        <span class="wh-dash-item"><span class="dot accent"></span> 5 decisions today</span>
       </div>
     </div>
   </section>
